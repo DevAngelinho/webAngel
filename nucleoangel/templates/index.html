@@ -1,100 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XOXO Club</title>
-    {% load static %}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #0033ff 0%, #ff009d 100%);
-            text-align: center;
-            margin: 0;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .header .logo-section {
-            display: flex;
-            align-items: center;
-        }
-        .header img {
-            height: 50px;
-        }
-        .header .title {
-            margin-left: 20px;
-            font-size: 24px;
-            color: #000;
-        }
-        .header a {
-            text-decoration: none;
-            color: #00bfa5;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-        }
-        .header a img {
-            height: 30px;
-            margin-right: 5px;
-        }
-        .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px 0;
-        }
-        .logo img {
-            height: 250px;
-        }
-        .container {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
-        .item {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 250px;
-            margin: 10px;
-        }
-        .item img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .item h2 {
-            margin: 10px 0;
-            font-size: 24px;
-        }
-        .item p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .item button {
-            background-color: #00bfa5;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .item button:hover {
-            background-color: #009c85;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
-
     <div class="header">
         <div class="logo-section">
             <img src="{% static 'image/logo.png' %}" alt="XOXO Club">
@@ -110,7 +23,18 @@
     </div>
 
     <div class="container">
+        {% for producto in productos %}
         <div class="item">
+            <h2>{{ producto.valor }}$</h2>
+            <p>{{ producto.nombreProducto }}</p>
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombreProducto }}">
+            <button>Comprar</button>
+        </div>
+        {% empty %}
+        <p>No stock actualmente. ¡Vuelve en otro momento para más novedades!</p>    
+        {% endfor %}
+
+        <!--<div class="item">
             <h2>25$</h2>
             <p>Camisas Deportivas</p>
             <img src="{% static 'image/camisa.png' %}" alt="Camisas Deportivas">
@@ -130,7 +54,8 @@
             <img src="{% static 'image/nike.png' %}" alt="Medias">
             <img src="{% static 'image/adidas.png' %}" alt="Medias">
             <button>Comprar</button>
-        </div>
+        </div>-->
+
     </div>
 
 </body>

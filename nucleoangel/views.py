@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from .models import Producto
 
 def home(request):
-    return render(request, 'index.html')
+    return index(request)
 
 def interfaz(request):
     return render(request, 'interfaz.html')
 
 def index(request):
-    return render(request, 'index.html')
+    productos = Producto.objects.all()
+    return render(request, 'index.html', {'productos': productos})
 
