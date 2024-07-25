@@ -19,7 +19,7 @@ class Producto(models.Model):
     idProducto = models.CharField(max_length=4, primary_key=True)
     idCategoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     idProveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-    nombreProducto = models.CharField(max_length=50, blank=True, null=True)
+    nombreProducto = models.CharField(max_length=50, default=None)
     fechaFabricacion = models.DateField(blank=True, null=True)
     fechaVencimiento = models.DateField(blank=True, null=True)
     valor = models.DecimalField(max_digits=6, decimal_places=2)
