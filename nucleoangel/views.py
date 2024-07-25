@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from .models import Producto
 
-def home(request):
-    return index(request)
-
 def interfaz(request):
     return render(request, 'interfaz.html')
 
