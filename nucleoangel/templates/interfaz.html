@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Registro - XOXO Club</title>
+    {% load static %}
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-pink-500">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <div class="flex justify-center mb-6">
+            <img src="{% static 'logo.png' %}" alt="XOXO Club Logo" class="w-32">
+        </div>
+        <h2 class="text-center text-2xl font-bold mb-6">REGISTRARSE</h2>
+        <form class="space-y-4">
+            <div class="relative">
+                <input type="text" placeholder="Nombre" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <span class="absolute inset-y-0 right-4 flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="user icon" aria-hidden="true" width="20" height="20">
+                </span>
+            </div>
+            <div class="relative">
+                <input type="email" placeholder="Correo Electrónico" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <span class="absolute inset-y-0 right-4 flex items-center">
+                    <img src="https://www.tec-innova.mx/wp-content/uploads/2022/02/CORREO.png" alt="email icon" aria-hidden="true" width="20" height="20">
+                </span>
+            </div>
+            <div class="relative">
+                <input type="password" placeholder="Contraseña" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <span class="absolute inset-y-0 right-4 flex items-center">
+                    <img src="https://previews.123rf.com/images/faysalfarhan/faysalfarhan1602/faysalfarhan160200828/52257151-candado-icono-de-bot%C3%B3n-redondo-de-color-azul-brillante-cian.jpg" alt="lock icon" aria-hidden="true" width="20" height="20">
+                </span>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" id="remember" class="h-4 w-4 text-teal-500 focus:ring-teal-400 border-gray-300 rounded">
+                <label for="remember" class="ml-2 block text-sm text-gray-900">Recordar Usuario</label>
+            </div>
+            <button type="submit" class="w-full bg-teal-500 text-white py-2 rounded-lg font-semibold hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400">Continuar</button>
+        </form>
+        
+        <!-- Botón para ir a la página principal -->
+        <div class="mt-4 text-center">
+            <a href="{% url 'index' %}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.293 3.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414-1.414L10.586 11H3a1 1 0 1 1 0-2h7.586L6.293 4.707a1 1 0 0 1 0-1.414z" clip-rule="evenodd" />
+                </svg>
+                Volver a la Tienda
+            </a>
+        </div>
+    </div>
+</body>
+</html>
