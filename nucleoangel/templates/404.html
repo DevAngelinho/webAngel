@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>XOXO Club 404</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <img src="{% static 'image/logo.png' %}" alt="XOXO Club">
+            <div class="title">TIENDA DEPORTIVA XOXO</div>
+        </div>
+        <div>
+            <a href="{% url 'interfaz' %}"><img src="{% static 'image/icon.png' %}" alt="Icono">Registrarse/Iniciar sesión</a>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="{% static 'image/logo.png' %}" alt="XOXO Club Logo">
+    </div>
+
+    <div>
+        <h1>Error 404</h1>
+        <h2>Página No Encontrada</h2>
+        <p>Lo sentimos, la página que buscas no se pudo encuentrar.</p>
+        <a href="{% url 'home' %}">Volver al inicio</a>
+    </div>
+</body>
+</html>
